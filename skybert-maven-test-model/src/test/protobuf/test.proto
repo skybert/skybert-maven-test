@@ -1,0 +1,26 @@
+/**
+ * Test Data Model.
+ * author: hudd@stibodx.com
+ */
+syntax = "proto3";
+
+package net.skybert.proto;
+ 
+/**
+ * Output one .java file per message and enum instead of one big java
+ * file acting as a wrapper. This lets us have imports like
+ *
+ * import net.skybert.proto.SecretFoo;
+ *
+ * instead of
+ *
+ * import net.skybert.proto.Test.SecretFoo;
+ */
+option java_multiple_files = true;
+ 
+message SecretFoo {
+  int32 id = 1;
+  optional int64 creation_date = 5;
+  optional int64 update_date = 6;
+  optional string description = 9;
+}
